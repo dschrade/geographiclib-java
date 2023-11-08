@@ -90,8 +90,8 @@ public class PolygonArea {
   private static int transitdirect(double lon1, double lon2) {
     // We want to compute exactly
     //   int(floor(lon2 / 360)) - int(floor(lon1 / 360))
-    lon1 = Math.IEEEremainder(lon1, 720.0);
-    lon2 = Math.IEEEremainder(lon2, 720.0);
+    lon1 = StrictMath.IEEEremainder(lon1, 720.0);
+    lon2 = StrictMath.IEEEremainder(lon2, 720.0);
     return ( (lon2 >= 0 && lon2 < 360 ? 0 : 1) -
              (lon1 >= 0 && lon1 < 360 ? 0 : 1) );
   }
@@ -124,7 +124,7 @@ public class PolygonArea {
   private static double AreaReduceB(double area, double area0,
                                     int crossings,
                                     boolean reverse, boolean sign) {
-    area = Math.IEEEremainder(area, area0);
+    area = StrictMath.IEEEremainder(area, area0);
     if ((crossings & 1) != 0)
       area += (area < 0 ? 1 : -1) * area0/2;
     // area is with the clockwise sense.  If !reverse convert to

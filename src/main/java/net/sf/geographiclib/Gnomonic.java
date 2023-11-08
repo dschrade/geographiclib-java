@@ -132,7 +132,7 @@ package net.sf.geographiclib;
  */
 
 public class Gnomonic {
-  private static final double eps_ = 0.01 * Math.sqrt(Math.ulp(1.0));
+  private static final double eps_ = 0.01 * StrictMath.sqrt(StrictMath.ulp(1.0));
   private static final int numit_ = 10;
   private Geodesic _earth;
   private double _a, _f;
@@ -222,8 +222,8 @@ public class Gnomonic {
                        Double.NaN);
 
     double azi0 = GeoMath.atan2d(x, y);
-    double rho = Math.hypot(x, y);
-    double s = _a * Math.atan(rho / _a);
+    double rho = StrictMath.hypot(x, y);
+    double s = _a * StrictMath.atan(rho / _a);
     boolean little = rho <= _a;
 
     if (!little)
@@ -253,7 +253,7 @@ public class Gnomonic {
         : (rho - (pos.M12 / pos.m12)) * pos.m12 * pos.m12;
       s -= ds;
 
-      if (Math.abs(ds) <= eps_ * _a)
+      if (StrictMath.abs(ds) <= eps_ * _a)
         trip++;
     }
 

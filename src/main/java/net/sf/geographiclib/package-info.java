@@ -326,7 +326,7 @@
  *   Add implementation of the ellipsoidal
  *   {@link net.sf.geographiclib.Gnomonic} (courtesy of Sebastian Mattheis).
  * <li>
- *   Math.toRadians and Math.toDegrees are used instead of GeoMath.degree
+ *   StrictMath.toRadians and StrictMath.toDegrees are used instead of GeoMath.degree
  *   (which is now removed).  This requires Java 1.2 or later (released
  *   1998-12).
  * </ul>
