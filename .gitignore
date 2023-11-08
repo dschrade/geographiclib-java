@@ -3,3 +3,5 @@
 target/
 distrib-Java/
 .settings/
+.classpath
+.project
