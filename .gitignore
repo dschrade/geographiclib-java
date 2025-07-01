@@ -5,3 +5,4 @@ distrib-Java/
 .settings/
 .classpath
 .project
+.idea/
